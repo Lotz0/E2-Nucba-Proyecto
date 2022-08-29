@@ -9,13 +9,13 @@ body{
     
 }
 
-nav{
+header{
+    height: 70px;
     width: auto;
-    height: auto;
-    background-color: #1cb5e0;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left, #000046, #1cb5e0);
 }
 
 ul{
@@ -24,7 +24,7 @@ ul{
     width: auto;
     list-style: none;
     height: 70px;
-    background: linear-gradient(to left, #000046, #1cb5e0);
+    
 }
 
 li{
@@ -43,22 +43,26 @@ li a{
     height: 20px;
     text-decoration: none;
     background-color: #000046;
+    opacity: 0.6;
+    transition: 0.3s;
 }
 
 li a:hover{
     background-color: rgb(156, 156, 156);
 }
 
+  main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
 .principal{
     display: flex;
-    width: auto;
-    flex-direction: row;   
-    justify-content: center;
-    margin-top:100px;
-    gap:0px,
-    
-
-    
+    padding: 60px 0px;
+    width: 90%;
+    justify-content: space-around;
 }
 
 .principalImage{
@@ -66,15 +70,16 @@ li a:hover{
     flex-direction: column;
     justify-content: center;  
     gap:0px;  
-    padding-right: 100px;
+    width: auto;
+
     
 }
 
 
 
 .Image1{
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     background-color: #1cb5e0;
     border-radius: 60px;
 }
@@ -82,7 +87,9 @@ li a:hover{
 .infoPrincipal{
     display: flex;
     flex-direction: column;
-    padding-left: 100px;   
+    justify-content: center;
+    gap: 30px;
+    width: auto;
 }
 
 .button {
@@ -118,5 +125,62 @@ li a:hover{
     border-radius: 15px;
   }
 
-  
-  
+
+
+
+
+
+
+  .cards {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: auto;
+}
+
+    .card {
+        flex: 0 1 24%;
+    }
+
+
+    .card {
+        background: white;
+        margin-bottom: 2em;	
+    }
+    
+    .card a {
+        color: black;
+        text-decoration: none;
+    }
+    
+    .card a:hover {
+        box-shadow: 3px 3px 8px hsl(0, 0%, 80%);
+    }
+    
+    .card-content {
+        padding: 1.4em;
+    }
+    
+    .card-content h2 {
+        margin-top: 0;
+        margin-bottom: .5em;
+        font-weight: bold;
+    }
+    
+    .card-content p {
+        font-size: 80%;
+    }
+
+
+
+    footer {
+        text-align: center;
+        padding: 3px;
+        background: linear-gradient(to left, #36d1dc, #5b86e5);
+        color: white;
+    }
+
+
+
+    
