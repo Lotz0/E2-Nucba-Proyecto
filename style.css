@@ -27,7 +27,7 @@ ul{
     
 }
 
-li{
+.nav-hover{
     float: right;
     opacity: 0.8;
 }
@@ -36,7 +36,7 @@ a{
     color: rgb(255, 255, 255);
 }
 
-li a{
+.nav-hover a{
     display: block;
     text-align: center;
     padding: 25px 15px;
@@ -47,7 +47,7 @@ li a{
     transition: 0.3s;
 }
 
-li a:hover{
+.nav-hover:hover{
     background-color: rgb(156, 156, 156);
 }
 
@@ -174,13 +174,81 @@ li a:hover{
 
 
 
-    footer {
-        text-align: center;
-        padding: 3px;
+    
+
+
+
+
+
+    footer{
+        width: 100%;
         background: linear-gradient(to left, #36d1dc, #5b86e5);
-        color: white;
+
     }
 
+    footer .footer-content{
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+        padding: 45px 0px;
+    }
 
+    footer .footer-content .box .figure{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-    
+    .footer-img{
+        width: 150px;
+        height: 150px;
+    }
+    footer .footer-content .box h2{
+        color:  black;
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+    footer .footer-content .box p{
+        color: black;
+        margin-bottom: 10px;
+    }
+
+    footer .footer-content .box2 .footer-social a{
+        display: inline-block;
+        text-decoration: none;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        color: black;
+        margin-right: 10px;
+        text-align: center;
+        transition: all 300ms ease;
+    }
+
+    footer .footer-content .box2 .footer-social a:hover{
+        color: aquamarine;
+    }
+
+    footer .footer-2{
+        background-color: #000046;
+        padding: 15px 10px;
+        text-align: center;
+        color: wheat;
+    }
+
+    footer .footer-2 small{
+        font-size: 16px;
+    }
+    @media screen and (max-width:800px){
+        footer .footer-content{
+            width: 90%;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 30px;
+            padding: 30px 0px;
+        }
+    }
