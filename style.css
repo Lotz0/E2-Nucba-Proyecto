@@ -9,53 +9,67 @@ body{
     
 }
 
-header{
-    height: 70px;
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: linear-gradient(to left, #000046, #1cb5e0);
-}
+/* header */
 
-ul{
-    margin: 0;
-    padding: 0;
-    width: auto;
-    list-style: none;
-    height: 70px;
-    
+.nav{
+    background: linear-gradient(to left, #36d1dc, #5b86e5);
+    height: 80px;
+    color: white;
 }
-
-.nav-hover{
-    float: right;
-    opacity: 0.8;
+.nav__logo{
+    font-size: 1.5em;
+    font-weight: 900;
 }
-
-a{
+.nav__menu{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 3em;
+}
+.nav__item{
     color: rgb(255, 255, 255);
-}
-
-.nav-hover a{
-    display: block;
-    text-align: center;
-    padding: 25px 15px;
-    height: 20px;
     text-decoration: none;
-    background-color: #000046;
-    opacity: 0.6;
-    transition: 0.3s;
+    --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+.nav__item::after{
+    content: "";
+    display: block;
+    background: #ffffff;
+    width: 90%;
+    margin-top: 3px;
+    height: 4px;
+    clip-path: var(--clippy);
+    transition: clip-path .2s;
+}
+.nav__item:hover{
+    --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-.nav-hover:hover{
-    background-color: rgb(156, 156, 156);
+.nav__container{
+    display: flex;
+    height: 100%; 
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
 }
+
+
+
+
+.nav__label, .nav__input{
+    display: none;
+}
+
+
+
+
 
   main{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
   }
   
 .principal{
@@ -63,6 +77,7 @@ a{
     padding: 60px 0px;
     width: 90%;
     justify-content: space-around;
+    gap: 30px;
 }
 
 .principalImage{
@@ -92,22 +107,9 @@ a{
     width: auto;
 }
 
-.button {
-    background-color: #000046;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    opacity: 0.6;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-  }
+
   
-  .button:hover {opacity: 1}
+
   
 
   .infoText{
@@ -124,12 +126,6 @@ a{
 
     border-radius: 15px;
   }
-
-
-
-
-
-
 
   .cards {
     margin-top: 30px;
@@ -208,7 +204,7 @@ a{
         width: 150px;
         height: 150px;
     }
-    footer .footer-content .box h2{
+    footer .footer-content .box {
         color:  black;
         margin-bottom: 20px;
         font-size: 20px;
@@ -244,11 +240,94 @@ a{
     footer .footer-2 small{
         font-size: 16px;
     }
-    @media screen and (max-width:800px){
+
+    /* tablet size */
+    @media screen and (max-width:992px){
+        p {
+            font-size: 26px;
+        }
+        h2{
+            font-size: 30px;
+        }
+
+
+        .principal{
+            gap: 30px;
+        }
+
+
+        .nav__label{
+            display: block;
+            cursor: pointer;
+        }
+     
+     
+     
+        .nav__menu{
+            position: fixed;
+            top: 80px;
+            bottom: 0px;
+            background: linear-gradient(to left, #36d1dc, #5b86e5);
+            width: 100%;
+            left: 0px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+            clip-path: circle(0 at center);
+            transition: clip-path .4s ease-in-out;
+        }
+        
+        .nav__input:checked + .nav__menu{
+        clip-path: circle(100% at center);    
+        }
+        .nav__item{
+            font-size: 20px;
+        }
+        
+    
+
         footer .footer-content{
+            display: flex;
+            flex-direction: column;
             width: 90%;
             grid-template-columns: repeat(1, 1fr);
-            grid-gap: 30px;
+            grid-gap: 40px;
             padding: 30px 0px;
+        }
+        .footer-img{
+            display: none;
+        }
+        .footer-social{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            gap: 100px;
+        }
+
+
+        .footer-social a{
+            display: flex;
+            height: 50px;
+            width: 50px;
+        }
+        a.fa.fa-facebook{
+            font-size: 40px;
+        }
+        a.fa.fa-twitter{
+            font-size: 40px;
+        }
+
+        a.fa.fa-instagram{
+            font-size: 40px;
+        }
+    }
+
+    @media screen and (max-width:767px){
+        .principalImage{
+            display: none;
+        }
+        .infoText{
+            flex-direction: column;
         }
     }
